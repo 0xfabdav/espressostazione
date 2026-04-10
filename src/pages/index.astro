@@ -1,0 +1,235 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const coffeeRetailers = [
+  "Füllhorn Biomarkt in der Erbprinzenstrasse",
+  "Lana L8 in der Lessingstrasse",
+  "Naturkost am Lutherplatz in Grötzingen",
+  "Abraxas Naturkost in Neustadt an der Weinstrasse",
+  "Knöbl Naturkost in Ettlingen",
+  "Kammerer-Kehr Schmuck in Ettlingen"
+];
+
+const baristaLiterature = [
+  "R. und F. Illy: Espresso",
+  "Thomas Leeb und Ingo Rogalla: Kaffee, Espresso und Barista",
+  "M. Pendergrast: Wie eine Bohne die Welt veränderte",
+  "I. und J. Niemeyer: Espresso von A bis Z"
+];
+
+---
+
+<BaseLayout title="espresso stazione - Karlsruhe">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="espresso stazione Startseite">
+      <img src="/assets/logo.png" alt="espresso stazione" />
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#bar">Bar</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#tostino">Tostino</a>
+      <a href="#baristakurs">Baristakurs</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-row" id="top" data-reveal>
+      <article>
+        <p class="kicker">In Karlsruhe seit 2003</p>
+        <h1>espresso stazione</h1>
+        <p>
+          Kaffee, Kommunikation und Qualität auf kleinem Raum. Die stazione ist Treffpunkt für
+          Cappuccino am Morgen, einen schnellen Imbiss am Mittag und Ristretto am Abend.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kontakt">Jetzt vorbeikommen</a>
+          <a class="btn btn-ghost" href="#zeiten">Öffnungszeiten</a>
+        </div>
+      </article>
+      <figure class="feature-media">
+        <img src="/assets/gallery/unnamed.jpg" alt="espresso stazione" loading="eager" />
+      </figure>
+    </section>
+
+    <section id="bar" class="feature-row" data-reveal>
+      <figure class="feature-media">
+        <img src="/assets/gallery/unnamasded.jpg" alt="Die Bar" loading="lazy" />
+      </figure>
+      <article>
+        <p class="kicker">Die Bar</p>
+        <h2>Klein, klar, charakterstark.</h2>
+        <p>
+          Gestartet im Juni 2003. Was geblieben ist: ein klarer Fokus auf Kaffeequalität,
+          persönliche Atmosphäre und ein Ort, an dem man gern kurz bleibt - oder etwas länger.
+        </p>
+      </article>
+    </section>
+
+    <section id="angebot" class="feature-row reverse" data-reveal>
+      <figure class="feature-media">
+        <img src="/assets/gallery/asd.jpg" alt="Angebot espresso stazione" loading="lazy" />
+      </figure>
+      <article>
+        <p class="kicker">Angebot</p>
+        <h2>Was wir servieren</h2>
+        <p>
+          100% Arabica, eine harmonische 85/15 Mischung und ein kräftiger Barespresso.
+          Dazu schonend gerösteter Kaffee, Tee, feine Trinkschokoladen sowie Tramezzini und Panini.
+        </p>
+        <p class="notice" id="special-notice">Neu: Eigene Schokolade in Zusammenarbeit mit dem Zuckerbecker.</p>
+      </article>
+    </section>
+
+    <section id="tostino" class="feature-row" data-reveal>
+      <figure class="feature-media">
+        <img src="/assets/gallery/assa.jpg" alt="espresso tostino" loading="lazy" />
+      </figure>
+      <article>
+        <p class="kicker">espresso tostino</p>
+        <h2>Röstung mit Anspruch.</h2>
+        <p>
+          In der Rösterei im Alten Schlachthof entstehen kleine Chargen Espresso und Kaffee:
+          schonend langzeitgeröstet, biologisch angebaut und/oder fair gehandelt.
+        </p>
+        <h3>Verkaufsstellen</h3>
+        <ul class="clean-list">
+          {
+            coffeeRetailers.map((retailer) => (
+              <li>{retailer}</li>
+            ))
+          }
+        </ul>
+      </article>
+    </section>
+
+    <section id="baristakurs" class="feature-row reverse" data-reveal>
+      <figure class="feature-media">
+        <img src="/assets/gallery/fvx.jpg" alt="Baristakurs" loading="lazy" />
+      </figure>
+      <article>
+        <p class="kicker">Baristakurs</p>
+        <h2>Die 4M-Regel für guten Espresso</h2>
+        <p>
+          Maschine, Mühle, Mischung, Mensch: Temperatur, Mahlgrad, Bohnenqualität und sauberes Handwerk
+          entscheiden gemeinsam über eine gute Tasse.
+        </p>
+        <h3>Literatur</h3>
+        <ul class="clean-list">
+          {
+            baristaLiterature.map((book) => (
+              <li>{book}</li>
+            ))
+          }
+        </ul>
+      </article>
+    </section>
+
+    <section id="zeiten" class="feature-row reverse" data-reveal>
+      <article>
+        <p class="kicker">Öffnungszeiten</p>
+        <h2>Wann wir da sind</h2>
+        <p class="hours-main" id="opening-times">
+          Montag - Freitag 08:00 - 17:00<br />
+          Samstag 11:00 - 17:00
+        </p>
+      </article>
+      <figure class="feature-media">
+        <img src="/assets/gallery/dd.jpg" alt="espresso stazione" loading="lazy" />
+      </figure>
+    </section>
+
+    <section id="kontakt" class="feature-row reverse" data-reveal>
+      <div class="map-shell" aria-label="Karte zur espresso stazione in Karlsruhe">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10468.73732796482!2d8.405915!3d49.007078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479707acd83cb811%3A0x178fbdc7dd303620!2sespresso%20stazione!5e0!3m2!1sen!2sus!4v1775737659969!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Maps espresso stazione Karlsruhe"
+        ></iframe>
+      </div>
+      <article>
+        <p class="kicker">Kontakt</p>
+        <h2>espresso stazione</h2>
+        <p>Gerald Hammer</p>
+        <p id="address">Kreuzstrasse 17, 76133 Karlsruhe</p>
+        <p>Mail: <a id="email-link" href="mailto:geraldo.hammer@web.de">geraldo.hammer@web.de</a></p>
+        <p>Telefon: <a id="phone-link" href="tel:+497212030397">0721 / 20 30 397</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-nav">
+      <a href="#top">Nach oben</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <div class="footer-legal">
+      <a href="/dsvgo">DSGVO</a>
+      <a href="/impressum">Impressum</a>
+      <a href="/admin/login">Admin</a>
+    </div>
+    <p>© 2026 espresso stazione Karlsruhe</p>
+  </footer>
+
+  <script>
+    import { fetchSettings } from "../lib/settings";
+
+    const revealItems = document.querySelectorAll("[data-reveal]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    const settings = await fetchSettings();
+    if (settings) {
+      const openingTimesEl = document.getElementById("opening-times");
+      const specialNoticeEl = document.getElementById("special-notice");
+      const addressEl = document.getElementById("address");
+      const emailLink = document.getElementById("email-link") as HTMLAnchorElement | null;
+      const phoneLink = document.getElementById("phone-link") as HTMLAnchorElement | null;
+
+      if (openingTimesEl && settings.opening_times) {
+        openingTimesEl.innerHTML = settings.opening_times
+          .split(/\n+/)
+          .map((line) => line.trim())
+          .filter(Boolean)
+          .map((line) => `<span>${line}</span>`)
+          .join("");
+      }
+
+      if (specialNoticeEl && settings.special_notice) {
+        specialNoticeEl.textContent = settings.special_notice;
+      }
+
+      if (addressEl && settings.address) {
+        addressEl.textContent = settings.address;
+      }
+
+      if (emailLink && settings.email) {
+        emailLink.textContent = settings.email;
+        emailLink.href = `mailto:${settings.email}`;
+      }
+
+      if (phoneLink && settings.phone_number) {
+        phoneLink.textContent = settings.phone_number;
+        phoneLink.href = `tel:${settings.phone_number.replace(/\s+/g, "")}`;
+      }
+    }
+  </script>
+</BaseLayout>
